@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рецепт успеха космонавта: по следам Валентины Терешковой»</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- СЛАЙД 1: Ракета и качества -->
+        <div class="slide slide-1" id="slide1">
+            <div class="row-cosmonaut">
+                <!-- слева Валентина Терешкова -->
+                <div class="left-col">
+                    <video src="./assets/video/Valentina_Tereshkova.MP4" autoplay muted loop playsinline controls></video>
+                </div>
+                <!-- центр: ракета с 8 слотами (4x2) -->
+                <div class="center-col">
+                    <div class="rocket-title">Восток-6</div>
+                    <div class="rocket" id="rocketStages"></div>
+                    <div class="levels-label">▼ уровни качеств ▼</div>
+                </div>
+                <!-- справа список качеств -->
+                <div class="right-col">
+                    <div class="qualities-title">Ингредиенты успеха</div>
+                    <div class="qualities-list" id="qualitiesContainer"></div>
+                    <div class="control-buttons">
+                        <button class="cosmo-btn small" id="resetBtn">Сброс</button>
+                        <button class="cosmo-btn" id="cookBtn">Приготовить</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-note">✧ кликни по качеству → кликни по уровню, чтобы разместить ✧</div>
+        </div>
+        <!-- СЛАЙД 2: Рецепт -->
+        <div class="slide slide-2" id="slide2">
+            <div id="dishContent"></div>
+            <div class="back-btn">
+                <button class="cosmo-btn" id="backToRocketBtn">← К ракете</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
