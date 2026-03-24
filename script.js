@@ -2,14 +2,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // ДАННЫЕ
 
     const ALL_QUALITIES = [
+        "Психологическая устойчивость",
         "Спортивная подготовка",
         "Выносливость",
-        "Смелость",
-        "Дисциплина",
-        "Психологическая устойчивость",
-        "Целеустремлённость",
-        "Удача",
-        "Оптимизм"
+        "Смелость"
     ];
 
     const QUALITY_INGREDIENTS = {
@@ -109,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             name: "Шоколад «Чайка»",
-            desc: "Этот молочный шоколад с добавлением тёртого ореха кешью был выпущен фабрикой «Красный Октябрь» в 1965 году. Название связано с позывным Терешковой во время полёта на корабле «Восток-6» —  «Чайка». Автором этикетки стал главный художник фабрики Леонид Челноков. Шоколад имел большой успех: за декабрь 1965 года было выпущено 273 тонны этого продукта",
+            desc: "Этот молочный шоколад с добавлением тёртого ореха кешью был выпущен фабрикой «Красный Октябрь» в 1965 году. Название связано с позывным Терешковой во время полёта на корабле «Восток-6» —  «Чайка». Автором этикетки стал главный художник фабрики Леонид Челноков. Шоколад имел большой успех: за декабрь 1965 года было выпущено 273 тонны этого продукта.",
             ingredients: [
                 { name: "Какао-масло (36,4 г)", quality: "выносливость", desc: "Даёт стабильность и плавность текстуры — как выносливость помогает идти к цели, не теряя силы духа." },
                 { name: "Какао тёртое (25,2 г)", quality: "целеустремлённость", desc: "Основа вкуса и цвета — символизирует решимость достичь цели, как путь Терешковой к звёздам." },
@@ -124,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // СОСТОЯНИЕ 
     let availableQualities = [...ALL_QUALITIES];
-    let slots = new Array(8).fill(null);
+    let slots = new Array(4).fill(null);
     let selectedQuality = null;
 
     
@@ -231,24 +227,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function resetGame() {
         availableQualities = [...ALL_QUALITIES];
-        slots = new Array(8).fill(null);
+        slots = new Array(4).fill(null);
         selectedQuality = null;
         renderQualities();
         renderSlots();
     }
 
     function determineDish() {
-        const qualitiesOnBoard = slots.filter(s => s !== null);
-        if (qualitiesOnBoard.includes('Дисциплина') || qualitiesOnBoard.includes('Психологическая устойчивость')) return DISHES[0];
-        if (qualitiesOnBoard.includes('Спортивная подготовка') || qualitiesOnBoard.includes('Целеустремлённость')) return DISHES[1];
-        if (qualitiesOnBoard.includes('Выносливость') || qualitiesOnBoard.includes('Удача')) return DISHES[2];
-        if (qualitiesOnBoard.includes('Смелость') || qualitiesOnBoard.includes('Оптимизм')) return DISHES[3];
+        // Проверяем, что все 4 слота заполнены
+        if (slots.every(s => s !== null)) {
+            const firstQuality = slots[0];
+            switch (firstQuality) {
+                case "Психологическая устойчивость":
+                    return DISHES[0];
+                case "Спортивная подготовка":
+                    return DISHES[1];
+                case "Выносливость":
+                    return DISHES[2];
+                case "Смелость":
+                    return DISHES[3];
+                default:
+                    return null;
+            }
+        }
         return null;
     }
 
     function showDish(dish) {
         if (!dish) {
-            alert('Ни одно блюдо не подходит. Попробуй другое сочетание качеств!');
+            alert('Сначала заполните все 4 уровня качествами!');
             return;
         }
         let html = `
@@ -282,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function() {
     resetBtn.addEventListener('click', resetGame);
     cookBtn.addEventListener('click', () => {
         const dish = determineDish();
-        dish ? showDish(dish) : alert('Из этих качеств не получается ни одно блюдо из меню. Добавьте хотя бы одно качество из списка.');
+        dish ? showDish(dish) : alert('Сначала заполните все 4 уровня качествами!');
     });
     backBtn.addEventListener('click', () => {
         slide2.style.display = 'none';
