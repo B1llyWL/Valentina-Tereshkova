@@ -87,7 +87,7 @@ body {
     background: url('./assets/img/rocket.png') no-repeat center/contain;
     display: grid;
     grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 4px;
     margin-bottom: 25px;
     position: relative;
