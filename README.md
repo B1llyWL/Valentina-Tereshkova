@@ -25,7 +25,8 @@
 
 <h3>Title Slide</h3>
 <div style="max-width: 1200px; margin: 0 auto;">
-  <img src="https://github.com/user-attachments/assets/92ab7e2d-009b-4717-b30e-66a82ddd9c96" style="width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+  <img src="https://github.com/user-attachments/assets/9a328570-1561-4417-a065-f7c97b0bb0ea" />
+" style="width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
 </div>
 
 <h3>Historical Recipes from the Era</h3>
