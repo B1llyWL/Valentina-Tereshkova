@@ -53,15 +53,12 @@ body {
     align-self: center;         
 }
 
-.left-col video {
+.left-col img {
     width: 100%;
-    height: auto;
-    border-radius: 40px;
-    border: 3px solid #f5c482;
+    height: 100%;
     object-fit: cover;
-    background: #718b9b;
+    border-radius: 20px;
 }
-
 .center-col {
     flex: 1.8;
     min-width: 280px;
