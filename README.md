@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/History-Soviet_Space_Program-red?style=for-the-badge&logo=historia&logoColor=white" alt="History">
   <img src="https://img.shields.io/badge/First_Woman_in_Space-1963-blue?style=for-the-badge&logo=rocket&logoColor=white" alt="First Woman in Space">
   <img src="https://img.shields.io/badge/Platform-Presentation-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Platform">
-  <img src="https://img.shields.io/badge/githubpages-FFD700?style=for-the-badge&logo=githubpages&logoColor=black" alt="Github Pages">
+  <img src="https://img.shields.io/badge/github_pages-FFD700?style=for-the-badge&logo=github_pages&logoColor=black" alt="Github Pages">
 </p>
 
 <p align="center">
